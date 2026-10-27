@@ -1,0 +1,53 @@
+.welcome-shell {
+  min-height: 100svh;
+  display: flex;
+  justify-content: center;
+  background: #f3ece5;
+  color: #17232c;
+  font-family: 'Itim', 'Anuphan', sans-serif;
+}
+.welcome-page {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  padding: max(48px, env(safe-area-inset-top)) 24px max(25px, env(safe-area-inset-bottom));
+  background: radial-gradient(ellipse at 15% 5%, #ffffff65, transparent 50%), #fdf7f0;
+  overflow: hidden;
+}
+.welcome-heading { margin-top: auto; text-align: center; }
+.welcome-heading h1 { margin: 0 auto; width: 86%; max-width: 308px; }
+.welcome-logo { display: block; width: 100%; height: auto; mix-blend-mode: darken; }
+.welcome-heading p { margin: 0; font-size: clamp(22px, 6vw, 28px); line-height: 1.27; font-weight: 400; }
+.welcome-carousel { margin-top: 35px; touch-action: pan-y; }
+.welcome-illustration { aspect-ratio: 250 / 217; width: calc(100% + 32px); margin-left: -16px; display: grid; place-items: center; animation: cat-appear .25s ease-out; }
+.welcome-cat { width: 100%; height: 100%; mix-blend-mode: darken; mask-image: linear-gradient(to bottom, transparent, black 5%, black 94%, transparent); }
+.welcome-alternate-cat { width: 100%; height: 100%; object-fit: contain; max-height: 335px; mix-blend-mode: multiply; }
+.welcome-dots { display: flex; justify-content: center; margin-top: 0; height: 34px; align-items: center; }
+.welcome-dots button { display: grid; place-items: center; width: 25px; height: 34px; padding: 0; }
+.welcome-dots span { width: 9px; height: 9px; border-radius: 50%; background: #d1cbc6; transition: background .2s; }
+.welcome-dots [aria-current] span { background: #ff7997; }
+.welcome-footer { margin-top: 4px; margin-bottom: auto; text-align: center; }
+.welcome-start { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; min-height: 62px; border-radius: 100px; color: white; background: linear-gradient(110deg, #ff819e, #ff7395); font-size: 24px; box-shadow: inset 0 1px 3px #ffffff26; transition: transform .15s, background .15s; -webkit-tap-highlight-color: transparent; }
+.welcome-start:hover { background: #fa6c90; }
+.welcome-start:active { transform: scale(.98); }
+.welcome-page button:focus-visible { outline: 3px solid #943f60; outline-offset: 4px; }
+.welcome-footer p { color: #858994; font-size: 17px; line-height: 1.45; margin: 19px 0 0; }
+@keyframes cat-appear { from { opacity: .5; } to { opacity: 1; } }
+@media (min-width: 600px) {
+  .welcome-shell { padding: 24px; align-items: center; }
+  .welcome-page { min-height: 820px; border-radius: 36px; box-shadow: 0 8px 30px #62483418, 0 2px 8px #6248340c; }
+}
+@media (max-width: 360px) {
+  .welcome-page { padding-left: 22px; padding-right: 22px; padding-top: 32px; }
+  .welcome-carousel { margin-top: 22px; }
+  .welcome-start { min-height: 54px; font-size: 22px; }
+  .welcome-footer p { font-size: 15px; margin-top: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .welcome-illustration { animation: none; }
+  .welcome-page button, .welcome-dots span { transition: none; }
+}
+.welcome-cat-scene { position: relative; width: 100%; padding-top: 48px; } .welcome-cat-hd { display: block; width: 100%; height: auto; mix-blend-mode: darken; } .welcome-cat-message { position: absolute; top: 0; right: 10px; margin: 0; padding: 12px 16px; border-radius: 50%; background: #ffede2; font-size: 17px; line-height: 1.35; text-align: center; transform: rotate(-7deg); }
+

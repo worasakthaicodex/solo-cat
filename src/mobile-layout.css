@@ -1,0 +1,36 @@
+/* Keep native form controls readable without iOS focus zoom. */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body input, body select, body textarea { font-size: 16px !important; min-width: 0; max-width: 100%; box-sizing: border-box; }
+input[type=date], input[type=time], input[type=datetime-local] { min-inline-size: 0; width: 100%; display: block; -webkit-appearance: none; appearance: none; }
+input::-webkit-date-and-time-value { text-align: left; min-width: 0; }
+.planner-entry-body > *, .two-col > *, .entry-fields > label { min-width: 0; }
+.planner-backdrop, .kao-modal-backdrop, .home-dialog-backdrop, .sheet-backdrop {
+  top: var(--visual-top, 0px); bottom: auto;
+  height: var(--visual-height, 100dvh);
+  padding-top: max(12px, env(safe-area-inset-top));
+  padding-bottom: max(12px, env(safe-area-inset-bottom));
+  overscroll-behavior: contain;
+}
+.planner-backdrop .planner-dialog { max-height: 100%; }
+.planner-add-dialog .planner-entry-form { max-height: calc(var(--visual-height, 100dvh) - max(12px, env(safe-area-inset-top)) - max(12px, env(safe-area-inset-bottom))); }
+.planner-entry-body { overscroll-behavior: contain; }
+.app-card:has(.planner-backdrop, .kao-modal-backdrop, .home-dialog-backdrop, .sheet-backdrop) { overflow: hidden !important; }
+@media (max-width: 719px) {
+  html:has(.solo-dashboard), body:has(.solo-dashboard), #root:has(.solo-dashboard) { height: 100%; min-height: 0; overflow: hidden; overscroll-behavior: none; }
+  .app-shell.solo-dashboard { height: 100dvh; min-height: 0; padding: 0; }
+  .solo-dashboard .app-card { height: 100%; min-height: 0; overflow-x: hidden; overflow-y: auto; overscroll-behavior: none; scrollbar-width: none; padding-top: env(safe-area-inset-top); }
+  .solo-dashboard .app-card::-webkit-scrollbar { display: none; }
+  .solo-dashboard .app-card > main { min-height: 100%; height: auto; }
+  .solo-dashboard .app-card > main:not(.entry-page) { padding-bottom: calc(104px + env(safe-area-inset-bottom)); }
+  .entry-page { padding-bottom: calc(28px + env(safe-area-inset-bottom)); }
+  .planner-entry-body { scrollbar-width: none; }
+  .planner-entry-body::-webkit-scrollbar { display: none; }
+}
+
+html[lang=en] .cat-menu-button, html[lang=en] .more-grid button { overflow-wrap: anywhere; }
+html[lang=en] .cat-menu-button { font-size: 16px; }
+html[lang=en] .planner-header h1, html[lang=en] .entry-header h1 { font-size: 23px; }
+html[lang=en] .entry-fields>label>span { width: 106px; font-size: 14px; }
+html[lang=en] .planner-greeting { font-size: 11px; }
+html[lang=en] .account-menu button { min-height: 52px; }
+html[lang=en] .more-grid button { font-size: 13px; }

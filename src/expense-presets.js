@@ -1,0 +1,17 @@
+export const expensePresets=[
+ {id:'food',name:'อาหาร',category:'food',type:'expense',repeat:'none',color:'#ff5f92',background:'#ffe9f0'},
+ {id:'home',name:'บ้าน',category:'home',type:'expense',repeat:'none',color:'#e99347',background:'#fff0df'},
+ {id:'transport',name:'เดินทาง',category:'transport',type:'expense',repeat:'none',color:'#369cbb',background:'#e0f5fc'},
+ {id:'shopping',name:'ช้อปปิ้ง',category:'shopping',type:'expense',repeat:'none',color:'#ff5f92',background:'#ffe9f0'},
+ {id:'subscription',name:'สมาชิก',category:'subscription',type:'subscription',repeat:'monthly',color:'#d99b18',background:'#fff4d9'},
+ {id:'debt',name:'หนี้สิน',category:'debt',type:'expense',repeat:'monthly',color:'#9170d8',background:'#f2ecff'},
+ {id:'general',name:'อื่น ๆ',category:'general',type:'expense',repeat:'none',color:'#897a9a',background:'#f1edf4'},
+ {id:'netflix',name:'Netflix',category:'subscription',type:'subscription',repeat:'monthly',color:'#e50914',background:'#fff0f2'},
+ {id:'spotify',name:'Spotify',category:'subscription',type:'subscription',repeat:'monthly',color:'#159b54',background:'#e7fbef'},
+ {id:'youtube',name:'YouTube Premium',category:'subscription',type:'subscription',repeat:'monthly',color:'#ff0033',background:'#fff0f3'},
+ {id:'internet',name:'ค่าอินเทอร์เน็ต',category:'home',type:'expense',repeat:'monthly',color:'#00aa91',background:'#e3fff6'},
+ {id:'electricity',name:'ค่าไฟฟ้า',category:'home',type:'expense',repeat:'monthly',color:'#eb931e',background:'#fff3df'},
+ {id:'water',name:'ค่าน้ำประปา',category:'home',type:'expense',repeat:'monthly',color:'#269bd5',background:'#e6f6ff'},
+ {id:'rent',name:'ค่าเช่าบ้าน',category:'home',type:'expense',repeat:'monthly',color:'#bd6c92',background:'#fff0f6'},
+ {id:'music',name:'Apple Music',category:'subscription',type:'subscription',repeat:'monthly',color:'#ed426a',background:'#fff0f4'},
+]

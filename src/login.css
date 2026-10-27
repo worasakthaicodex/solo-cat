@@ -1,0 +1,29 @@
+.login-page { padding-top: max(55px, env(safe-area-inset-top)); }
+.login-heading h1 { width: 72%; max-width: 264px; }
+.login-heading p { margin-top: 5px; font-size: clamp(20px, 5.7vw, 25px); line-height: 1.32; }
+.login-art { display: block; flex-shrink: 0; width: calc(100% + 30px); margin: 4px -15px 5px; mix-blend-mode: darken; }
+.login-actions { display: flex; flex-direction: column; gap: 9px; text-align: center; }
+.login-art-scene { position: relative; margin: 12px 0 8px; }
+.login-art-scene .login-art { height: auto; }
+.login-art-caption { position: absolute; right: 0; top: 0; margin: 0; text-align: center; font-size: clamp(14px, 4vw, 19px); line-height: 1.1; color: #625956; transform: rotate(5deg); }
+.login-button { display: flex; justify-content: center; align-items: center; gap: 10px; border-radius: 100px; min-height: 55px; width: 100%; font-size: 19px; padding: 10px; box-shadow: 0 2px 6px #62483416; }
+.google-login { background: linear-gradient(#2d3b45, #24313a); color: white; border: 1px solid #35414a; }
+.email-login { background: #fff; border: 1px solid #eae2da; }
+.login-button:active { transform: scale(.98); }
+.signup-link { align-self: center; min-height: 44px; font-size: 17px; text-decoration: underline; text-underline-offset: 3px; }
+.guest-link { align-self: center; min-height: 44px; color: #8b626d; font-size: 16px; }
+.login-footer { position: relative; margin-top: 23px; margin-bottom: auto; padding-bottom: 0; text-align: center; }
+.login-friends { display: block; width: 110px; margin: 0 auto 2px; mix-blend-mode: darken; }
+.login-footer p { font-size: 15px; color: #83828a; margin: 0; line-height: 1.4; }
+.login-paw { position: absolute; color: #ffe4d8; fill: #ffe4d8; stroke-width: 1; }
+.left-paw { left: -7px; top: -4px; transform: rotate(-22deg); }
+.right-paw { right: -9px; bottom: 3px; transform: rotate(20deg); }
+.mock-account { padding: 14px; background: #fff9f5; border: 1px solid #f0e3dc; border-radius: 22px; }
+.mock-back { display: flex; align-items: center; gap: 6px; min-height: 44px; }
+.mock-account h2 { margin: 0; font-size: 22px; }
+.mock-account p { color: #85818a; font-size: 16px; line-height: 1.5; }
+@media (max-width: 360px) {
+  .login-page { padding-top: 35px; }
+  .login-button { min-height: 49px; font-size: 17px; }
+  .login-footer { margin-top: 15px; }
+}

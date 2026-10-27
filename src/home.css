@@ -1,0 +1,47 @@
+.solo-dashboard { background: #f3ece5; }
+.solo-dashboard .app-card { background: #fdf7f0; }
+.solo-dashboard .soft-orb { display: none; }
+.cat-home { display: flex; flex-direction: column; min-height: 100svh; padding: max(35px, env(safe-area-inset-top)) 24px calc(99px + env(safe-area-inset-bottom)); font-family: 'Itim', 'Anuphan', sans-serif; }
+.cat-home-heading { text-align: center; margin-top: auto; }
+.cat-home-heading h1 { width: 72%; max-width: 270px; margin: 0 auto; }
+.cat-home-heading p { margin: 0; font-size: clamp(22px, 6vw, 28px); line-height: 1.3; color: #24313e; }
+.cat-home-artwork { margin: 18px 0 14px; }
+.cat-greeting { width: fit-content; margin: 0 0 0 4px; padding: 9px 17px; border: 1.5px solid #a9a09a; border-radius: 45% 45% 35% 40%; font-size: 17px; text-align: center; line-height: 1.3; }
+.cat-home-hero { display: block; width: 100%; height: auto; margin: 0 auto; mix-blend-mode: darken; }
+.cat-home-menu { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-bottom: auto; }
+.cat-menu-button { min-height: 96px; border: 1px solid #f2e7df; border-radius: 21px; background: #fffcf7; box-shadow: 0 4px 13px #7952370a; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 10px 5px; font-size: 18px; transition: transform .15s, box-shadow .15s; }
+.cat-menu-button { transition: transform .15s, box-shadow .15s, background-color .15s; }
+@media (hover: hover) and (pointer: fine) {
+  .cat-menu-button:hover { background: #ffe3db; box-shadow: 0 4px 14px #d3899826; }
+}
+.cat-menu-button:active { background: #ffe3db; transform: scale(.96); }
+.cat-menu-button:focus-visible { outline: 3px solid #d87791; outline-offset: 3px; }
+.cat-menu-icon { width: 40px; height: 38px; mix-blend-mode: darken; }
+.solo-dashboard .bottom-nav { position: fixed; left: 50%; transform: translateX(-50%); width: 100%; max-width: 430px; height: calc(76px + env(safe-area-inset-bottom)); padding-bottom: calc(12px + env(safe-area-inset-bottom)); background: #fffcf7; border-top: 1px solid #f0e7df; box-shadow: 0 -4px 20px #62483405; font-family: 'Itim', 'Anuphan', sans-serif; }
+.solo-dashboard .bottom-nav > button:not(.nav-plus) { min-height: 44px; font-size: 12px; gap: 5px; }
+.solo-dashboard .bottom-nav > button.active svg { fill: #ff7897; stroke: #ff7897; }
+.solo-dashboard .nav-plus { width: 61px; height: 61px; margin-top: -25px; }
+.home-dialog-backdrop { position: fixed; inset: 0; z-index: 15; background: #30242d45; display: grid; place-items: center; padding: 24px; }
+.home-dialog { width: 100%; max-width: 350px; position: relative; background: #fffaf5; border-radius: 26px; padding: 35px 24px 26px; text-align: center; box-shadow: 0 12px 50px #30242d26; }
+.home-dialog-close { position: absolute; right: 6px; top: 6px; width: 44px; height: 44px; display: grid; place-items: center; }
+.home-dialog h2 { margin: 12px 0; }
+.home-dialog p { font-size: 18px; }
+.home-dialog small { color: #91838a; }
+@media (min-width: 600px) {
+  .solo-dashboard { padding: 24px; align-items: center; }
+  .solo-dashboard .app-card { width: 430px; height: auto; min-height: 820px; max-height: none; border-radius: 36px; box-shadow: 0 8px 30px #62483418; }
+  .solo-dashboard .cat-home { min-height: 820px; overflow: visible; }
+  .solo-dashboard .bottom-nav { position: absolute; border-radius: 0 0 36px 36px; }
+}
+@media (max-width: 360px) {
+  .cat-home { padding-left: 20px; padding-right: 20px; padding-top: 28px; }
+  .cat-home-hero { margin-top: 18px; }
+  .cat-home-menu { gap: 9px; }
+  .cat-menu-button { min-height: 80px; font-size: 16px; border-radius: 17px; }
+  .cat-menu-icon { width: 34px; height: 32px; }
+}
+@media (prefers-reduced-motion: reduce) { .cat-menu-button { transition: none; } }
+.cat-menu-button .kao-drawn-icon { width: 46px; height: 42px; mask-image: none; }
+.house-icon { object-fit: contain; mask-image: none !important; mix-blend-mode: normal !important; }
+.cat-menu-button .ot-menu-icon { width: 46px; height: 42px; object-fit: contain; mix-blend-mode: normal; mask-image: none; }
+.cat-menu-button{isolation:isolate}

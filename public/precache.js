@@ -1,0 +1,1 @@
+self.SOLO_PRECACHE=[];

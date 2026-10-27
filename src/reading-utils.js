@@ -1,0 +1,1 @@
+export async function readingBookId(title,author){const normalize=s=>s.normalize('NFKC').trim().replace(/\s+/g,' ').toLowerCase();const bytes=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(normalize(title)+'\n'+normalize(author)));return Array.from(new Uint8Array(bytes),b=>b.toString(16).padStart(2,'0')).join('')}

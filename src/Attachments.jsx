@@ -1,0 +1,10 @@
+import {t as trUI,locale} from './i18n'
+import React,{useState,useEffect} from 'react'
+import {Paperclip,Download,Trash2} from 'lucide-react'
+export default function Attachments({owner}){
+ const [files,setFiles]=useState([]),[error,setError]=useState(''),[busy,setBusy]=useState(false),[deleting,setDeleting]=useState(null)
+ const refresh=()=>SoloStore.fileList(owner).then(setFiles).catch(e=>setError(e.message));useEffect(()=>{refresh()},[owner])
+ async function upload(e){const input=e.target;setBusy(true);setError('');try{await SoloStore.addFiles(owner,input.files);await refresh()}catch(err){setError(err.message)}finally{input.value='';setBusy(false)}}
+ async function download(id){const f=await SoloStore.fileGet(id);if(!f){setError('ไม่พบไฟล์ในเครื่อง');return}const url=URL.createObjectURL(f.blob),a=document.createElement('a');a.href=url;a.download=f.name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+ return <section className="attachments"><h3><Paperclip size={17}/>{trUI("ไฟล์แนบ")}</h3><label>{trUI("เพิ่มไฟล์ (ไม่เกิน 2 MB ต่อไฟล์)")}<input aria-label={trUI("เพิ่มไฟล์แนบ")} type="file" multiple disabled={busy} onChange={upload}/></label><small>{trUI("ไฟล์เก็บในเครื่องทันที รวมในไฟล์สำรองข้อมูลด้วย")}</small>{files.map(f=><div className="attachment-row" key={f.id}><span>{f.name}<small>{(f.size/1024).toFixed(1)} KB</small></span><button type="button" aria-label={'ดาวน์โหลด '+f.name} onClick={()=>download(f.id)}><Download size={18}/></button><button type="button" aria-label={'ลบ '+f.name} onClick={()=>setDeleting(f.id)}><Trash2 size={18}/></button></div>)}{deleting&&<div className="attachment-confirm"><p>{trUI("ลบไฟล์นี้ออกจากเครื่อง?")}</p><button type="button" onClick={async()=>{try{await SoloStore.fileDelete(deleting);setDeleting(null);await refresh()}catch(e){setError(e.message)}}}>{trUI("ยืนยันลบไฟล์")}</button><button type="button" onClick={()=>setDeleting(null)}>{trUI("ยกเลิก")}</button></div>}{busy&&<p role="status">{trUI("กำลังบันทึกไฟล์…")}</p>}{error&&<p role="alert">{trUI(error)}</p>}</section>
+}
